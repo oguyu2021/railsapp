@@ -1,14 +1,14 @@
-<%= form_with(model: @post, local: true) do |form| %>
-<div class="contents_form">
-  <div class="container_box">
-    <h3>投稿する</h3>
-    <%#= form_with(model: @post, local: true) do |form|  %>
-      <%= form.text_field :name, placeholder: "お名前", class: 'container'%>
-      <%= form.text_area :text, placeholder: "text", rows: "10", class: 'container'%>
-      <%= form.submit "つぶやく", class: 'container'%>
+<%= form_with(model: @post, local: true ,url: confirm_posts_path ) do |form| %>
+  <div class="contents_form">
+    <div class="container_box">
+      <h3>投稿する</h3>
+      <%#= form_with(model: @post, local: true) do |form|  %>
+        <%= form.text_field :name, placeholder: "お名前", class: 'container'%>
+        <%= form.text_area :text, placeholder: "text", rows: "10", class: 'container'%>
+        <%= form.submit "つぶやく", class: 'container'%>
+    </div>
   </div>
-</div>
-    <% end %>
+<% end %>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">

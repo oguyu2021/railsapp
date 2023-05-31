@@ -39,6 +39,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+
+  def confirm
+    @post = Post.new(post_params)
+  end
   
 
   private
