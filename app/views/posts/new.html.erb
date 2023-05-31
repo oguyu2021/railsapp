@@ -1,0 +1,23 @@
+<%= form_with(model: @post, local: true) do |form| %>
+<div class="contents_form">
+  <div class="container_box">
+    <h3>投稿する</h3>
+    <%#= form_with(model: @post, local: true) do |form|  %>
+      <%= form.text_field :name, placeholder: "お名前", class: 'container'%>
+      <%= form.text_area :text, placeholder: "text", rows: "10", class: 'container'%>
+      <%= form.submit "つぶやく", class: 'container'%>
+  </div>
+</div>
+    <% end %>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>

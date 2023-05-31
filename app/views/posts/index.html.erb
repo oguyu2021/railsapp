@@ -1,0 +1,17 @@
+<h1>Posts#index</h1>
+<div class="contents row">
+  <% @posts.each do |post| %>
+    <div class="content_post" >
+      <p><%= post.text %></p>
+      <span class="name">
+        <%= post.name %>
+      </span>
+      <%= link_to '詳細', post_path(post.id), method: :get %>
+      <%= link_to '編集', edit_post_path(post.id), method: :get %>
+      <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+    </div>
+  <% end %>
+</div>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+

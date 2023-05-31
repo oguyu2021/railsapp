@@ -1,0 +1,10 @@
+<div class="contents row">
+    <div class="content_post" >
+      <p><%= @post.text %></p>
+      <span class="name">
+        <%= @post.name %>
+      </span>
+      <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+      <%= link_to '削除', "/posts/#{@post.id}", method: :delete %>
+    </div>
+</div>
